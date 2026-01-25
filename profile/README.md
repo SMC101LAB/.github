@@ -1,4 +1,3 @@
-<img src="https://github.com/SMC101LAB/.github/blob/main/profile/imgs/title.png" width="60%" height="100%" />
 
 # SMC101LAB: 급경사지 데이터 시각화 프로젝트
 
