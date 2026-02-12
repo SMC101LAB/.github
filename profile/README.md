@@ -1,6 +1,6 @@
 # SMC101LAB: 급경사지 데이터 시각화 프로젝트
 
-급경사지(산사태·붕괴 위험 지역) 데이터를 체계적으로 관리하고, 현장 기술자 및 관리자가 직관적으로 위험 정보를 확인할 수 있도록 지원하는 지도 기반 위험 관리 웹·모바일 서비스
+급경사지(산사태·붕괴 위험 지역) 데이터를 체계적으로 관리하고, 현장 기술자 및 관리자가 직관적으로 위험 정보를 확인할 수 있도록 지원하는 지도 기반 위험 관리 웹 서비스입니다.
 
 <br/>
 
@@ -8,30 +8,27 @@
 
 **SMC101LAB**은 급경사지(산사태·붕괴 위험 지역) 데이터를 중앙에서 관리하고,  
 지도 기반 UI를 통해 현장 기술자와 관리자가 위험 정보를 직관적으로 확인할 수 있도록 설계된  
-**웹·모바일 통합 급경사지 관리 서비스**이다.
+**통합 급경사지 관리 웹 애플리케이션입니다.**
 
 기존 급경사지 관리 업무는 엑셀 파일과 문서 중심으로 이루어져 있어  
-데이터가 여러 곳에 분산되고, 현장에서 즉시 정보를 확인하기 어려운 구조였다.  
-또한 수작업으로 데이터를 수정·공유하는 과정에서 중복, 누락, 위치 오류 등의 문제가 빈번하게 발생했다.
+데이터가 여러 곳에 분산되고, 현장에서 즉시 정보를 확인하기 어려운 구조였습니다.  
+또한 수작업으로 데이터를 수정·공유하는 과정에서 중복, 누락, 위치 오류 등의 문제가 빈번하게 발생했습니다.
 
 본 프로젝트는 이러한 관리 방식을 개선하기 위해  
 급경사지 정보를 하나의 시스템에서 관리하고,  
-지도를 중심으로 데이터를 시각화하여 실제 현장 업무 흐름에 맞게 사용할 수 있도록 개발되었다.
+지도를 중심으로 데이터를 시각화하여 실제 현장 업무 흐름에 맞게 사용할 수 있도록 개발했습니다.
 
 ---
 
 ### 서비스 구성
 
-- **웹 애플리케이션**
-  - 관리자 및 사무 환경에서 사용하는 관리용 웹 서비스
+- **통합 웹 애플리케이션**
+  - 관리자용 PC 환경과 현장 기술자를 위한 모바일 환경을 모두 지원하는 반응형 웹앱
   - 급경사지 데이터 관리, 조회, 엑셀 업로드/다운로드 기능 제공
+  - 사용자 위치 기반 현장 정보 확인 지원
 
-- **모바일 애플리케이션**
-  - 현장 기술자를 위한 모바일 앱
-  - 사용자 위치 기반 급경사지 조회 및 현장 정보 확인 가능
-
-웹과 모바일은 동일한 백엔드 API를 사용하며,  
-환경에 따라 동일한 데이터를 서로 다른 UI로 제공한다.
+단일 백엔드 API를 기반으로 디바이스에 최적화된 UI를 제공하여  
+ 어디서든 동일한 데이터를 활용할 수 있도록 설계했습니다.
 
 ---
 
@@ -43,7 +40,7 @@
   - Android: Google Play Store
 
 실제 운영 환경을 기준으로 배포되어 있으며,  
-현장 및 사무 환경에서 모두 사용 가능하도록 구성되어 있다.
+ 현장 및 사무 환경에서 모두 사용 가능하도록 구성되어 있습니다.
 
 ---
 
@@ -53,64 +50,42 @@
 - **개발 인원**: 1인
 - **개발 형태**: 풀스택 개발
 
-#### 담당 역할
-
-- 서비스 기획 및 전체 아키텍처 설계
-- 웹 프론트엔드 개발 (React 기반 관리자 페이지)
-- 모바일 앱 개발 (React Native 기반 현장용 앱)
-- 백엔드 API 개발 및 데이터베이스 설계
-- AWS S3 연동 및 배포 환경 구성
-- GitHub Actions 기반 CI/CD 구축
-- App Store / Google Play 배포 및 운영
-
-<br/>
-
 ## 🛠 기술 스택
 
-### Frontend (Web)
+### Frontend
 
-- **Core**: React 18, TypeScript, Vite
-- **UI**: Styled-components, MUI
-- **State Management**: TanStack Query, Zustand
-- **Table**: TanStack Table
-- **Map**: react-naver-maps (네이버 지도 API)
-- **Analytics**: React GA4
+- React 18, TypeScript, Vite
+- TanStack Query, Zustand
+- TanStack Table
+- react-naver-maps
 
 ### Backend
 
-- **Runtime**: Node.js, Express, TypeScript
-- **Database**: MongoDB, Mongoose
-- **Authentication**: JWT, Bcrypt
-- **Storage**: AWS S3
-- **Data Processing**: ExcelJS
+- Node.js, Express, TypeScript
+- MongoDB (Mongoose)
+- JWT Authentication
+- AWS S3
 
-### Mobile (React Native)
+### Mobile
 
-- **Framework**: Expo SDK ~52, React Native 0.76.7
-- **WebView**: react-native-webview
-- **Location**: expo-location
-- **Media**: expo-image-picker, expo-file-system
-- **Permissions**: react-native-permissions
+- React Native (Expo)
 
-### Infrastructure & Tools
+### Infrastructure
 
-- **Deployment**: AWS S3, Netlify
-- **CI/CD**: GitHub Actions
-- **App Distribution**: App Store, Google Play Store
+- AWS
+- GitHub Actions (CI/CD)
 
-<br/>
-
-<br/>
+  <br/>
 
 ## ✨ 주요 기능
 
 ### 1. 로그인 및 급경사지 데이터 조회 / 수정
 
 JWT 기반 로그인 시스템을 적용해 사용자 권한에 따라 기능을 분리했습니다.  
-관리자는 전체 데이터 관리가 가능하며, 현장 사용자는 조회 및 일부 정보 등록만 허용됩니다.
+ 관리자는 전체 데이터 관리가 가능하며, 현장 사용자는 조회 및 일부 정보 등록만 허용됩니다.
 
 로그인 후 지도 및 테이블 기반으로 급경사지 데이터를 조회할 수 있으며,  
-**무한 스크롤 + 가상 스크롤**을 적용해 대용량 데이터에서도 성능을 유지했습니다.
+ **무한 스크롤 + 가상 스크롤**을 적용해 대용량 데이터에서도 성능을 유지했습니다.
 
 - 위험 등급·지역 선택·필터 초기화 등 다양한 조건 검색 지원
 - 표시할 열 항목 설정 기능 제공
@@ -119,9 +94,9 @@ JWT 기반 로그인 시스템을 적용해 사용자 권한에 따라 기능을
 
 이를 통해 대량 데이터 환경에서도 빠르고 직관적인 관리가 가능하도록 구현했습니다.
 
-<br/>
+  <br/>
 
-<img src="./imgs/Access&DataManagement.gif" width="800"/>
+  <img src="./imgs/Access&DataManagement.gif" width="800"/>
 
 ---
 
@@ -136,9 +111,9 @@ JWT 기반 로그인 시스템을 적용해 사용자 권한에 따라 기능을
 
 이를 통해 데이터 관리 효율성을 높이고 입력 오류를 최소화했습니다.
 
-<br/>
+  <br/>
 
-<img src="./imgs/SearchExcel.gif" width="800"/>
+  <img src="./imgs/SearchExcel.gif" width="800"/>
 
 ---
 
@@ -154,9 +129,9 @@ JWT 기반 로그인 시스템을 적용해 사용자 권한에 따라 기능을
 
 이를 통해 현장과 사무 환경 모두에서 빠르고 직관적인 위치 기반 조회가 가능하도록 했습니다.
 
-<br/>
+  <br/>
 
-<img src="./imgs/MapFeatures.gif" width="800"/>
+  <img src="./imgs/MapFeatures.gif" width="800"/>
 
 ---
 
@@ -170,8 +145,8 @@ JWT 기반 로그인 시스템을 적용해 사용자 권한에 따라 기능을
 
 안전한 사용자 관리를 통해 시스템 보안을 강화했습니다.
 
-<br/>
+  <br/>
 
-<img src="./imgs/UserManagement.gif" width="800"/>
+  <img src="./imgs/UserManagement.gif" width="800"/>
 
 ---
